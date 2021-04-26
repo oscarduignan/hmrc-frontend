@@ -32,4 +32,5 @@ export default {
   TimeoutDialog,
   UserResearchBanner,
   CharacterCount,
+
 };
