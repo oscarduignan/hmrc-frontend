@@ -23,6 +23,15 @@ const getTableItems = ($) => {
 };
 
 describe('Add to a list', () => {
+  it('should be rendered using a structure accessible for JAWS users', () => {
+    // See Adam Liptrot's comment on
+    // https://github.com/hmrc/design-patterns/issues/31#issuecomment-799628620
+
+    const $ = render('add-to-a-list', examples['multiple-specific-items']);
+
+    expect($('.hmrc-add-to-a-list').first().html()).toMatchSnapshot();
+  });
+
   describe('by default', () => {
     const $ = render('add-to-a-list', examples.default);
     const $heading = $('h1');
